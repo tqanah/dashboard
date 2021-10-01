@@ -1,0 +1,73 @@
+<?php
+
+namespace App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Controller;
+
+use App\Http\Requests\StoreCategoryRequest;
+use App\Http\Resources\CategoryResource;
+use App\Models\Dashboard\Category;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class CategoryController extends Controller
+{
+
+    public function index()
+    {
+        return CategoryResource::collection(Category::orderBy('created_at','desc')->paginate(10));
+    }
+
+
+    public function create()
+    {
+
+    }
+
+
+    public function store(StoreCategoryRequest $request)
+    {
+        $cat = new Category;
+        if ($request->hasFile('thumbnail'))
+            $file=$request->thumbnail;
+
+        $cat->name=$request->name;
+        $cat->description=$request->description;
+        $cat->save();
+
+        return new CategoryResource($cat);
+    }
+
+
+    public function show(Category $category)
+    {
+        return new CategoryResource($category);
+    }
+
+    public function edit(Category $category)
+    {
+        //
+    }
+
+
+    public function update(StoreCategoryRequest $request, Category $category)
+    {
+
+        if ($request->hasFile('thumbnail'))
+            $file=$request->thumbnail;
+
+        $category->name=$request->name;
+        $category->description=$request->description;
+        $category->save();
+        return new CategoryResource($category);
+
+    }
+
+
+    public function destroy(Category $category)
+    {
+        $category->delete();
+
+        return response()->noContent();
+    }
+}
