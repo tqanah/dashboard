@@ -15,6 +15,7 @@ class BlogController extends Controller
 {
     public function index()
     {
+
         $sort_column = request('sort_column', 'created_at');
         $sort_dircetion = request('sort_dircetion', 'asc');
 

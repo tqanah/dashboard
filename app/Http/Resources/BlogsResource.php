@@ -22,10 +22,12 @@ class BlogsResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
+            'body'=>$this->body,
             'published_at' => $this->created_at->diffForHumans(),
             'created_at' => $this->created_at,
+            'time_read'=>$this->time_read,
             'author' => $this->Author->name,
-            'image' => $this->getFirstMediaUrl(),
+            'image' => $this->image,
             'category' => new CategoryResource($this->Categories),
             'link' => $url.'api/dashboard/blog/show/' . $this->id
         ];

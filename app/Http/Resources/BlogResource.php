@@ -22,7 +22,7 @@ class BlogResource extends JsonResource
            'published_at'=>$this->created_at->diffForHumans(),
            'created_at'=>$this->created_at,
            'author'=>$this->Author->name,
-           'image'=>$this->getFirstMediaUrl(),
+           'image'=>$this->image,
            'category'=>new CategoryResource($this->Categories)
 
        ];
