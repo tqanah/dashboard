@@ -58,7 +58,7 @@
 
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link btn-danger" href=""
+                            <a class="nav-link btn-danger" href="" @click.prevent="logout"
                             >
                                 <i class="fas fa-power-off"></i>
                                 <p>
@@ -100,16 +100,10 @@ export default {
     methods: {
 
         logout() {
-
-            axios.post("logout").then(response => {
-                console.log(response);
+            axios.post('logout').then(res => {
+                window.location.href = '/login'
             })
-                .catch(error => {
-                    console.log(error);
-                });
-
-
-        },
+        }
 
     }
 

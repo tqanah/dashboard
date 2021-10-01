@@ -2681,10 +2681,8 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {},
   methods: {
     logout: function logout() {
-      axios.post("logout").then(function (response) {
-        console.log(response);
-      })["catch"](function (error) {
-        console.log(error);
+      axios.post('logout').then(function (res) {
+        window.location.href = '/login';
       });
     }
   }
@@ -39904,13 +39902,70 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(3),
+        _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
+          _c("div", { staticClass: "info-box mb-3" }, [
+            _vm._m(3),
+            _vm._v(" "),
+            _c("div", { staticClass: "info-box-content" }, [
+              _c(
+                "span",
+                { staticClass: "info-box-text" },
+                [
+                  _c("router-link", { attrs: { to: "/blog" } }, [
+                    _vm._v("Blogs")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "info-box-number" }, [_vm._v("41,410")])
+            ])
+          ])
+        ]),
         _vm._v(" "),
         _c("div", { staticClass: "clearfix hidden-md-up" }),
         _vm._v(" "),
-        _vm._m(4),
+        _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
+          _c("div", { staticClass: "info-box mb-3" }, [
+            _vm._m(4),
+            _vm._v(" "),
+            _c("div", { staticClass: "info-box-content" }, [
+              _c(
+                "span",
+                { staticClass: "info-box-text" },
+                [
+                  _c("router-link", { attrs: { to: "/blog" } }, [
+                    _vm._v("Gallery")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "info-box-number" }, [_vm._v("760")])
+            ])
+          ])
+        ]),
         _vm._v(" "),
-        _vm._m(5)
+        _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
+          _c("div", { staticClass: "info-box mb-3" }, [
+            _vm._m(5),
+            _vm._v(" "),
+            _c("div", { staticClass: "info-box-content" }, [
+              _c(
+                "span",
+                { staticClass: "info-box-text" },
+                [
+                  _c("router-link", { attrs: { to: "/blog" } }, [
+                    _vm._v("Users")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c("span", { staticClass: "info-box-number" }, [_vm._v("2,000")])
+            ])
+          ])
+        ])
       ])
     ])
   ])
@@ -39963,54 +40018,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
-      _c("div", { staticClass: "info-box mb-3" }, [
-        _c("span", { staticClass: "info-box-icon bg-danger elevation-1" }, [
-          _c("i", { staticClass: "fab fa-blogger" })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "info-box-content" }, [
-          _c("span", { staticClass: "info-box-text" }, [_vm._v("Blogs")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "info-box-number" }, [_vm._v("41,410")])
-        ])
-      ])
+    return _c("span", { staticClass: "info-box-icon bg-danger elevation-1" }, [
+      _c("i", { staticClass: "fab fa-blogger" })
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
-      _c("div", { staticClass: "info-box mb-3" }, [
-        _c("span", { staticClass: "info-box-icon bg-success elevation-1" }, [
-          _c("i", { staticClass: "far fa-image" })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "info-box-content" }, [
-          _c("span", { staticClass: "info-box-text" }, [_vm._v("Gallery")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "info-box-number" }, [_vm._v("760")])
-        ])
-      ])
+    return _c("span", { staticClass: "info-box-icon bg-success elevation-1" }, [
+      _c("i", { staticClass: "far fa-image" })
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
-      _c("div", { staticClass: "info-box mb-3" }, [
-        _c("span", { staticClass: "info-box-icon bg-warning elevation-1" }, [
-          _c("i", { staticClass: "fas fa-users" })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "info-box-content" }, [
-          _c("span", { staticClass: "info-box-text" }, [_vm._v(" Users")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "info-box-number" }, [_vm._v("2,000")])
-        ])
-      ])
+    return _c("span", { staticClass: "info-box-icon bg-warning elevation-1" }, [
+      _c("i", { staticClass: "fas fa-users" })
     ])
   }
 ]
@@ -40169,7 +40194,30 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _vm._m(0)
+                _c("li", { staticClass: "nav-item active" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-link btn-danger",
+                      attrs: { href: "" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.logout.apply(null, arguments)
+                        }
+                      }
+                    },
+                    [
+                      _c("i", { staticClass: "fas fa-power-off" }),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "\n                                    logout\n                                "
+                        )
+                      ])
+                    ]
+                  )
+                ])
               ]
             )
           ])
@@ -40179,24 +40227,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item active" }, [
-      _c("a", { staticClass: "nav-link btn-danger", attrs: { href: "" } }, [
-        _c("i", { staticClass: "fas fa-power-off" }),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "\n                                    logout\n                                "
-          )
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -55654,6 +55685,7 @@ try {
 
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+axios.defaults.withCredentials = true;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

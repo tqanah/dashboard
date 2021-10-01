@@ -40,7 +40,7 @@
                         <span class="info-box-icon bg-danger elevation-1"><i class="fab fa-blogger"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text">Blogs</span>
+                            <span class="info-box-text"><router-link to="/blog"  >Blogs</router-link></span>
                             <span class="info-box-number">41,410</span>
                         </div>
                         <!-- /.info-box-content -->
@@ -57,7 +57,7 @@
                         <span class="info-box-icon bg-success elevation-1"><i class="far fa-image"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text">Gallery</span>
+                            <span class="info-box-text"><router-link to="/blog"  >Gallery</router-link></span>
                             <span class="info-box-number">760</span>
                         </div>
                         <!-- /.info-box-content -->
@@ -70,7 +70,7 @@
                         <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text"> Users</span>
+                            <span class="info-box-text"> <router-link to="/blog"  >Users</router-link></span>
                             <span class="info-box-number">2,000</span>
                         </div>
                         <!-- /.info-box-content -->

@@ -18,15 +18,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('dashboard')->group(function () {
+Route::group(['prefix' => 'dashboard'], function () {
 
     Route::prefix('blog')->group(function () {
 
-        Route::get('/','Dashboard\BlogController@index');
-        Route::get('/show/{id}','Dashboard\BlogController@show');
+        Route::get('/', 'Dashboard\BlogController@index');
+        Route::get('/show/{id}', 'Dashboard\BlogController@show');
 
     });
 
-    Route::apiResource('/category','Dashboard\CategoryController');
+    Route::apiResource('/category', 'Dashboard\CategoryController');
 
 });

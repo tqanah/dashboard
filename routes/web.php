@@ -43,5 +43,8 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function () {
 });
 
 Route::get('/{any}',function (){
+    if (\Illuminate\Support\Facades\Auth::guest())
+        return  redirect('/login');
+    else
     return view('dashboard.home');
 })->where('any','.*');
