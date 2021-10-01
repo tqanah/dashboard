@@ -14,7 +14,7 @@ class BlogsResource extends JsonResource
      */
     public function toArray($request)
     {
-        if (config('app.env') === 'local')
+        if (config('app.env') === 'production')
             $url = 'https://www.tqanah.com/';
         else
             $url = 'http://127.0.0.1:8000/';
