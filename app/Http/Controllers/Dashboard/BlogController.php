@@ -25,6 +25,16 @@ class BlogController extends Controller
 
     }
 
+    public function getAllBlogs()
+    {
+
+        $sort_column = request('sort_column', 'created_at');
+        $sort_dircetion = request('sort_dircetion', 'asc');
+
+        return  new BlogsCollection(Blog::with('blogs_creator')->get());
+
+    }
+
     public function create()
     {
 

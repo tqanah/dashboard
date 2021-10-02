@@ -23,6 +23,8 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::prefix('blog')->group(function () {
 
         Route::get('/', 'Dashboard\BlogController@index');
+        Route::get('/all', 'Dashboard\BlogController@getAllBlogs');
+
         Route::get('/show/{id}', 'Dashboard\BlogController@show');
 
     });
