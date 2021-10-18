@@ -31,7 +31,7 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function () {
     Route::prefix('blog')->group(function () {
         Route::get('/','Dashboard\BlogController@index');
         Route::get('/create','Dashboard\BlogController@create');
-        Route::get('/show/{id}','Dashboard\BlogController@show');
+        Route::get('/showBlog/{id}','Dashboard\BlogController@showBlog');
         Route::post('/store','Dashboard\BlogController@store')->name('blog.store');
     });
 

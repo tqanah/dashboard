@@ -68,8 +68,15 @@ class BlogController extends Controller
     {
         $blog=Blog::find($id);
 
-      //  return new BlogResource($blog);
+        return new BlogResource($blog);
       //  return  $blog;
+        return view('dashboard.blogs.show', ['blog' => $blog]);
+    }
+    public function showBlog($id){
+
+        $blog=Blog::find($id);
+
+    
         return view('dashboard.blogs.show', ['blog' => $blog]);
     }
 }

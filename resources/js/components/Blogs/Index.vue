@@ -73,7 +73,7 @@
                                 {{ blog.published_at }}
                             </td>
                             <td>
-                                <a :href="'/dashboard/blog/show/'+blog.id" target="_blank"> show</a>
+                                <a :href="'/dashboard/blog/showBlog/'+blog.id" target="_blank"> show</a>
                             </td>
                         </tr>
                         </tbody>
