@@ -82,6 +82,8 @@
 
 @endsection
 @section('js')
+<link rel="stylesheet" href="summernote-audio.css">
+<script type="text/javascript" src="summernote-audio.js"></script>
     <script>
 
         // Get a reference to the file input element
@@ -110,7 +112,7 @@
                     ['color', ['color']],
                     ['para', ['ul', 'ol', 'paragraph']],
                     ['table', ['table']],
-                    ['insert', ['link', 'picture', 'video']],
+                    ['insert',['video','media','link','hr']],
                     ['view', ['fullscreen', 'codeview', 'help']],
                     ['fontsize', ['fontsize']],
 
