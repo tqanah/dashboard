@@ -73,14 +73,8 @@ class CategoryController extends Controller
 
         return response()->noContent();
     }
-    public function filter($category)
+    public function filter(Category $category)
     {
-        $categoryBlogs = DB::table('blogs_categories')->where('category_id', $category)->get('blog_id');
-        $idsOfBlogs = [];
-        foreach ($categoryBlogs as  $blog) {
-            array_push($idsOfBlogs, $blog->blog_id);
-        }
-        $blogs = Blog::whereIn('id', $idsOfBlogs)->get();
-        return new BlogsCollection($blogs);
+        return new BlogsCollection($category->blogs);
     }
 }
