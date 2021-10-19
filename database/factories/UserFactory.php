@@ -27,7 +27,7 @@ $factory->define(User::class, function (Faker $faker) {
         'email' => 'omani@tqanah.com',
         'email_verified_at' => now(),
         'password' => Hash::make('tqanah123'),
-        'avatar'=>'https://lh3.googleusercontent.com/a-/AOh14Ghs5L6CLb18p7wNDtq5MNGSH4N3ZxaJ6wQ0HttQTA=s96-c',
+        'avatar' => 'https://lh3.googleusercontent.com/a-/AOh14Ghs5L6CLb18p7wNDtq5MNGSH4N3ZxaJ6wQ0HttQTA=s96-c',
         'remember_token' => Str::random(10),
     ];
 });

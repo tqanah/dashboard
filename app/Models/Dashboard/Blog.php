@@ -6,11 +6,12 @@ use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+
 class Blog extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
-    protected $fillable=[
+    protected $fillable = [
         'title',
         'body',
         'hasMedia',
@@ -22,16 +23,16 @@ class Blog extends Model implements HasMedia
 
     public function blogs_creator()
     {
-        return $this->belongsTo(User::class,'created_by');
+        return $this->belongsTo(User::class, 'created_by');
     }
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(Category::class,'category_id');
+        return $this->belongsToMany(Category::class, 'blogs_categories');
     }
 
     public function editor()
     {
-        return $this->belongTo(User::class,'updated_by');
+        return $this->belongTo(User::class, 'updated_by');
     }
 
     public function getAuthorAttribute()
@@ -42,5 +43,4 @@ class Blog extends Model implements HasMedia
     {
         return $this->category;
     }
-
 }
