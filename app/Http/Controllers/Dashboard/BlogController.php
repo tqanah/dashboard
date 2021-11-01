@@ -26,10 +26,10 @@ class BlogController extends Controller
     public function getAllBlogs()
     {
 
-        $sort_column = request('sort_column', 'created_at');
-        $sort_dircetion = request('sort_dircetion', 'asc');
+      //  $sort_column = request('sort_column', 'created_at');
+       // $sort_dircetion = request('sort_dircetion', 'asc');
 
-        return  new BlogsCollection(Blog::with('blogs_creator')->get());
+        return  new BlogsCollection(Blog::with(['blogs_creator','categories'])->get());
     }
 
     public function create()
@@ -46,14 +46,14 @@ class BlogController extends Controller
         $blog = new Blog;
         $blog->title = $request->title;
         $blog->body = $request->body;
+        $blog->time_read = $request->time_read;
+
         $blog->created_by = auth()->user()->id;
         $blog->updated_by = auth()->user()->id;
         $blog->save();
         $blog->categories()->sync($request->categories_id);
-
-        $blog->addMedia($request->image)->toMediaCollection();
-
-        //$blog->addMediaFromRequest('image')->toMediaCollection('images');
+       // dd($request->image);
+        $blog->addMediaFromRequest('image')->toMediaCollection();
 
         // $blog->update(['image' => $request->file('image')]);
 

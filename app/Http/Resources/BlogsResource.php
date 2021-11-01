@@ -28,7 +28,7 @@ class BlogsResource extends JsonResource
             'time_read'=>$this->time_read,
             'author' => $this->Author->name,
             'image' => $this->image,
-            'category' => new CategoryResource($this->Categories),
+            'category' =>  CategoryResource::collection($this->categories),
             'link' => $url.'api/dashboard/blog/show/' . $this->id
         ];
     }

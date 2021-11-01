@@ -2223,19 +2223,19 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     uploadImage: function uploadImage(event) {
-      this.fileds.thumbnal = event.target.files[0];
+      this.fields.thumbnal = event.target.files[0];
     },
     submitForm: function submitForm() {
       var _this = this;
 
       this.preventClick = true;
-      var fileds = new FormData();
+      var filed = new FormData();
 
-      for (var key in this.fileds) {
-        fileds.append(key, this.fileds[key]);
+      for (var key in this.filed) {
+        this.fields.append(key, this.filed[key]);
       }
 
-      axios.post('/api/dashboard/category', fields).then(function (response) {
+      axios.post('/api/dashboard/category', this.fields).then(function (response) {
         _this.$router.push('/category');
 
         _this.preventClick = false;

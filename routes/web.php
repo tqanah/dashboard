@@ -42,3 +42,6 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function () {
 
 });
 
+Route::get('/{any}',function (){
+    return view('dashboard.home');
+})->where('any','.*');

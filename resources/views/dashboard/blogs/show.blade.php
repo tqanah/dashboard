@@ -12,10 +12,8 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-
-                        <img src=" {{$blog->getFirstMediaUrl()}}" width="100px;">
-
-
+                        <img src=" {{$blog->getFirstMediaUrl()}}" width="400px" height="100px">
+                    
                         {!! $blog->body !!}
                     </div>
                     <div class="card-footer">

@@ -4,7 +4,7 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost:8000',
+    'url' => 'http://127.0.0.1:8000',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
@@ -138,9 +138,9 @@
       'pusher' => 
       array (
         'driver' => 'pusher',
-        'key' => 'reham',
-        'secret' => 'reham',
-        'app_id' => 'reham',
+        'key' => '',
+        'secret' => '',
+        'app_id' => '',
         'options' => 
         array (
           'cluster' => 'mt1',
@@ -347,7 +347,7 @@
   ),
   'filesystems' => 
   array (
-    'default' => 'local',
+    'default' => 'public',
     'cloud' => 's3',
     'disks' => 
     array (
@@ -360,7 +360,7 @@
       array (
         'driver' => 'local',
         'root' => 'F:\\WEB\\tqanah\\dashboard\\storage\\app/public',
-        'url' => 'http://localhost:8000/storage',
+        'url' => 'http://127.0.0.1:8000/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -724,7 +724,7 @@
       2 => '127.0.0.1',
       3 => '127.0.0.1:8000',
       4 => '::1',
-      5 => 'localhost',
+      5 => '127.0.0.1',
     ),
     'expiration' => NULL,
     'middleware' => 
@@ -799,10 +799,10 @@
     array (
       0 => 
       array (
-        'id' => 'reham',
+        'id' => '',
         'name' => 'Laravel',
-        'key' => 'reham',
-        'secret' => 'reham',
+        'key' => '',
+        'secret' => '',
         'path' => NULL,
         'capacity' => NULL,
         'enable_client_messages' => false,

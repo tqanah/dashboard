@@ -16,6 +16,7 @@ class BlogsCollection extends ResourceCollection
 
     public function toArray($request)
     {
+      
         return [
             'data' =>  BlogsResource::collection($this->collection)
         ];

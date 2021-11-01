@@ -81,18 +81,19 @@ export default {
     },
     methods: {
 
+
         uploadImage(event){
-            this.fileds.thumbnal = event.target.files[0];
+            this.fields.thumbnal = event.target.files[0];
         },
         submitForm() {
             this.preventClick=true;
 
-            let fileds =new FormData();
-            for (let key in this.fileds){
-                fileds.append(key,this.fileds[key]);
+            let filed =new FormData();
+            for (let key in this.filed){
+                this.fields.append(key,this.filed[key]);
             }
 
-            axios.post('/api/dashboard/category',fields).then(
+            axios.post('/api/dashboard/category',this.fields).then(
                 response => {
                     this.$router.push('/category');
                     this.preventClick=false
@@ -106,6 +107,7 @@ export default {
             })
         }
     }
+
 
 }
 </script>

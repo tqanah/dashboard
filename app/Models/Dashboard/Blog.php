@@ -39,8 +39,5 @@ class Blog extends Model implements HasMedia
     {
         return $this->blogs_creator;
     }
-    public function getCategoriesAttribute()
-    {
-        return $this->category;
-    }
+   
 }

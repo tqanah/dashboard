@@ -33,7 +33,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label>Time to read in (min)</label>
-                                        <input type="number" class="form-control" name="time">
+                                        <input type="number" class="form-control" name="time_read">
 
                                     </div>
                                 </div>
