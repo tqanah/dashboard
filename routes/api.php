@@ -26,9 +26,8 @@ Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/all', 'Dashboard\BlogController@getAllBlogs');
 
         Route::get('/show/{id}', 'Dashboard\BlogController@show');
-
     });
 
     Route::apiResource('/category', 'Dashboard\CategoryController');
-
+    Route::get('/categories/{category}/blogs', 'Dashboard\CategoryController@filter')->name('Category.Filter');
 });

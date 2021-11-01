@@ -15,17 +15,17 @@
                     <div class="card-body">
 
 
-                        <form method="post" action="{{route('blog.store')}}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('blog.store') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label>Category</label>
-                                        <select class="form-control select2"  name="category_id" style="width: 100%;">
-                                            <option selected="selected">select category</option>
-                                            @foreach($categories as $category)
-                                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                        <select class="form-control select2" name="categories_id[]" style="width: 100%;"
+                                            multiple>
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -42,7 +42,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>Main image</label>
-                                        <input type="file"  name="image" class="form-control">
+                                        <input type="file" name="image" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                         <label>Body</label>
                                         <textarea id="summernote" name="body">
 
-                                        </textarea>
+                                            </textarea>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +85,6 @@
 <link rel="stylesheet" href="summernote-audio.css">
 <script type="text/javascript" src="summernote-audio.js"></script>
     <script>
-
         // Get a reference to the file input element
         const inputElement = document.querySelector('input[type="filee"]');
 
@@ -93,15 +92,15 @@
         const pond = FilePond.create(inputElement);
         FilePond.setOptions({
             server: {
-                url:'/upload',
-                headers:{
-                    'X-CSRF-TOKEN':'{{csrf_token()}}'
+                url: '/upload',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
                 }
 
             }
         });
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#summernote').summernote({
                 placeholder: 'Hello stand alone ui',
                 tabsize: 2,
@@ -119,7 +118,5 @@
                 ]
             });
         });
-
-
     </script>
 @endsection
