@@ -1,4 +1,23 @@
 <?php return array (
+  'arcanedev/log-viewer' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Arcanedev\\LogViewer\\LogViewerServiceProvider',
+      1 => 'Arcanedev\\LogViewer\\Providers\\DeferredServicesProvider',
+    ),
+  ),
+  'beyondcode/laravel-websockets' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'BeyondCode\\LaravelWebSockets\\WebSocketsServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'WebSocketRouter' => 'BeyondCode\\LaravelWebSockets\\Facades\\WebSocketRouter',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 

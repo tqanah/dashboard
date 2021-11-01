@@ -67,16 +67,16 @@ class BlogController extends Controller
     public function show($id)
     {
         $blog=Blog::find($id);
-
+      //  dd($id);
         return new BlogResource($blog);
       //  return  $blog;
-        return view('dashboard.blogs.show', ['blog' => $blog]);
+        //return view('dashboard.blogs.show', ['blog' => $blog]);
     }
     public function showBlog($id){
 
         $blog=Blog::find($id);
 
-    
+
         return view('dashboard.blogs.show', ['blog' => $blog]);
     }
 }
