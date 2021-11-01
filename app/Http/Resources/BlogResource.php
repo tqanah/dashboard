@@ -14,7 +14,7 @@ class BlogResource extends JsonResource
      */
     public function toArray($request)
     {
-        
+
        return  [
            'id'=>$this->id,
            'title'=>$this->title,
@@ -24,7 +24,7 @@ class BlogResource extends JsonResource
            'created_at'=>$this->created_at,
            'author'=>$this->Author->name,
            'image'=>$this->image,
-           'category'=>new CategoryResource($this->Categories)
+           'category'=> CategoryResource::collection($this->Categories)
 
        ];
     }

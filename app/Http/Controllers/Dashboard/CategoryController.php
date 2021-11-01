@@ -75,7 +75,7 @@ class CategoryController extends Controller
     }
     public function filter(Category $category)
     {
-     
+
         return new BlogsCollection($category->blogs);
     }
 }
