@@ -38,7 +38,7 @@ class EstmatorController extends Controller
             Estmator::create([
                 'question' => $request->question,
                 'type' => $request->type,
-                'ansMCQ' => json_encode($data),
+                'answer' => json_encode($data),
                 'order' => 1
             ]);
         } else {
@@ -49,7 +49,7 @@ class EstmatorController extends Controller
             Estmator::create([
                 'question' => $request->question,
                 'type' => $request->type,
-                'ansMCQ' => json_encode($data),
+                'answer' => json_encode($data),
                 'order' => 1
             ]);
         }

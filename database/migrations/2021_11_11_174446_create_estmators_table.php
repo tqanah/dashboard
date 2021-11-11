@@ -19,6 +19,7 @@ class CreateEstmatorsTable extends Migration
             $table->enum('type',['MCQ','TF']);
             $table->json('ansMCQ')->nullable();
             $table->json('ansTF')->nullable();
+
             $table->integer('order');
             $table->timestamps();
         });
