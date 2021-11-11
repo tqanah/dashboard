@@ -47,9 +47,10 @@
                         </li>
 
                         <li class="nav-item active">
-                            <router-link to="/estimate-myapp" class="nav-link" >
-
+                            <a href="/dashboard/estimate"  class="nav-link">
                                 <i class="nav-icon far fa-clock"></i>Estimate
+                            </a>
+                            <router-link to="/estimate-myapp" >
 
                             </router-link>
                         </li>

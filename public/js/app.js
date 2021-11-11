@@ -2678,6 +2678,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -40174,17 +40175,9 @@ var render = function() {
                   "li",
                   { staticClass: "nav-item active" },
                   [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { to: "/estimate-myapp" }
-                      },
-                      [
-                        _c("i", { staticClass: "nav-icon far fa-clock" }),
-                        _vm._v("Estimate\n\n                            ")
-                      ]
-                    )
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("router-link", { attrs: { to: "/estimate-myapp" } })
                   ],
                   1
                 ),
@@ -40254,7 +40247,21 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "nav-link", attrs: { href: "/dashboard/estimate" } },
+      [
+        _c("i", { staticClass: "nav-icon far fa-clock" }),
+        _vm._v("Estimate\n                            ")
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 

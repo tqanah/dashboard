@@ -8,7 +8,9 @@
                 <div class="card card-outline card-info">
                     <div class="card-header">
                         <h3 class="card-title">
-                            Question
+                          <a href="/dashboard/estimate/create" class="btn btn-primary">
+                              Create
+                          </a>
                         </h3>
                     </div>
                     <!-- /.card-header -->
