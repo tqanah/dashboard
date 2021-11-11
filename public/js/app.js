@@ -2670,6 +2670,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -40156,6 +40164,25 @@ var render = function() {
                       [
                         _c("i", { staticClass: "nav-icon fab fa-blogger" }),
                         _vm._v(" Blogs\n                            ")
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item active" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: "/estimate-myapp" }
+                      },
+                      [
+                        _c("i", { staticClass: "nav-icon far fa-clock" }),
+                        _vm._v("Estimate\n\n                            ")
                       ]
                     )
                   ],

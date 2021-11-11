@@ -27,6 +27,7 @@ Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
 Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');
 
 Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function () {
+    Route::Resource('estimate', 'EstmatorController');
 
     Route::prefix('blog')->group(function () {
         Route::get('/','Dashboard\BlogController@index');
@@ -42,6 +43,6 @@ Route::group(['prefix' => 'dashboard',  'middleware' => 'auth'],function () {
 
 });
 
-Route::get('/{any}',function (){
+/*Route::get('/{any}',function (){
     return view('dashboard.home');
-})->where('any','.*');
+})->where('any','.*');*/

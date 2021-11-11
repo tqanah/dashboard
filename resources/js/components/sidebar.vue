@@ -45,6 +45,14 @@
                             </router-link>
 
                         </li>
+
+                        <li class="nav-item active">
+                            <router-link to="/estimate-myapp" class="nav-link" >
+
+                                <i class="nav-icon far fa-clock"></i>Estimate
+
+                            </router-link>
+                        </li>
                         <li class="nav-item active">
                             <router-link   class="nav-link" to="/admin">
                                 <i class="nav-icon fas fa-users"></i> Admin
