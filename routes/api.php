@@ -28,7 +28,7 @@ Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/show/{id}', 'Dashboard\BlogController@show');
     });
     Route::get('/allQuest', 'EstmatorController@allQuest');
-    Route::get('/quest', 'EstmatorController@quest');
+    Route::get('/quest/{id}', 'EstmatorController@quest');
 
 
     Route::apiResource('/category', 'Dashboard\CategoryController');
